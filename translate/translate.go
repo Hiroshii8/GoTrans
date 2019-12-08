@@ -2,6 +2,7 @@ package translate
 
 import (
 	"github.com/Hiroshii8/GoTrans/Util"
+	"github.com/Hiroshii8/GoTrans/util"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"log"
@@ -37,7 +38,7 @@ func New() *Translate {
 func (t *Translate) Request(from, to, text string) (string, error) {
 
 	// validate the input before formatting
-	if !Util.ValidateInput(from, to, languageSupport) {
+	if !util.ValidateInput(from, to, languageSupport) {
 		return "", errors.New("input not valid!")
 	}
 

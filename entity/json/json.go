@@ -1,14 +1,14 @@
-package Json
+package json
 
-// TranslateJsonReq is request struct for http request with json
-type TranslateJsonReq struct {
+// TranslateJSONReq is request struct for http request with json
+type TranslateJSONReq struct {
 	From string `json:"from"`
 	To   string `json:"to"`
 	Text string `json:"text"`
 }
 
-// TranslateJsonResp is response struct for http request with json
-type TranslateJsonResp struct {
+// TranslateJSONResp is response struct for http request with json
+type TranslateJSONResp struct {
 	Success       bool          `json:"success"`
 	TranslateData TranslateData `json:"data"`
 }
