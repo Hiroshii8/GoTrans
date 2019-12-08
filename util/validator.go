@@ -1,4 +1,4 @@
-package Util
+package util
 
 // TODO - IMPROVE THIS | stil stupid tho
 // IsStringExist will check the entire array with Linear Search

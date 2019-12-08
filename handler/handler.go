@@ -2,9 +2,10 @@ package Handler
 
 import (
 	"encoding/json"
-	"github.com/Hiroshii8/GoTrans/Entity/Json"
-	translate "github.com/Hiroshii8/GoTrans/Translate"
 	"net/http"
+
+	jsonEntity "github.com/Hiroshii8/GoTrans/entity/json"
+	translate "github.com/Hiroshii8/GoTrans/translate"
 )
 
 type Handler struct{}
@@ -15,7 +16,7 @@ func (h *Handler) TranslateHandler(w http.ResponseWriter, r *http.Request) {
 		isSuccess  = true
 		errMessage string
 	)
-	request := Json.TranslateJsonReq{}
+	request := jsonEntity.TranslateJSONReq{}
 
 	err := json.NewDecoder(r.Body).Decode(&request)
 	if err != nil {
@@ -32,9 +33,9 @@ func (h *Handler) TranslateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// prepare for response
-	resp := Json.TranslateJsonResp{
+	resp := jsonEntity.TranslateJSONResp{
 		Success: isSuccess,
-		TranslateData: Json.TranslateData{
+		TranslateData: jsonEntity.TranslateData{
 			Text:       transResp,
 			ErrMessage: errMessage,
 		},
