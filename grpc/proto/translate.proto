@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package model;
+
+// GoTransReq is request message for GoTrans grpc
+message GoTransReq {
+    string from = 1;
+    string to = 2;
+    string text = 3;
+}
+
+message TranslateData {
+    string errorMessage = 1;
+    string translateText = 2;
+}
+
+// GoTransResp is response message for GoTrans grpc
+message GoTransResp {
+    bool isSuccess = 1;
+    TranslateData translateData = 2;
+}
+
+service Translate {
+    // RequestGrpc is grpc request for GoTrans
+    rpc RequestGrpc(GoTransReq) returns (GoTransResp) {}
+}

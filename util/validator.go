@@ -11,6 +11,7 @@ func IsStringExist(source string, dataSource []string) bool {
 	return false
 }
 
+// ValidateInput will check if source and dest language is exist in dataSource
 func ValidateInput(sourceLanguage, destLanguage string, dataSource []string) bool {
 	if IsStringExist(sourceLanguage, dataSource) && IsStringExist(destLanguage, dataSource) {
 		return true

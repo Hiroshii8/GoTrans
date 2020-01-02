@@ -11,14 +11,14 @@ type Server struct {
 	port string
 }
 
-// Start ..
+// Start server action
 func (s *Server) Start() error {
 	h := Handler.Handler{}
 	http.HandleFunc("/", h.TranslateHandler)
 	return http.ListenAndServe(s.port, nil)
 }
 
-// NewServer ..
+// NewServer will initialize Server Object
 func NewServer(port string) *Server {
 	return &Server{
 		port: port,

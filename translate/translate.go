@@ -1,11 +1,9 @@
 package translate
 
 import (
-	"github.com/Hiroshii8/GoTrans/Util"
 	"github.com/Hiroshii8/GoTrans/util"
 	"github.com/pkg/errors"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"net/url"
 	"regexp"
@@ -31,10 +29,12 @@ var (
 	}
 )
 
+// New for init Translate Struct
 func New() *Translate {
 	return &Translate{}
 }
 
+// Request will call function for request the translation
 func (t *Translate) Request(from, to, text string) (string, error) {
 
 	// validate the input before formatting
@@ -69,7 +69,6 @@ func (t *Translate) Request(from, to, text string) (string, error) {
 	}
 
 	resultText := string(content)
-	log.Println(resultText)
 	regex := regexp.MustCompile(`<div dir="ltr" class="t0">(.*?)</div>`)
 	res := regex.FindAllStringSubmatch(resultText, -1)
 
