@@ -47,3 +47,14 @@ go run app.go
 │   └── validator_test.go
 └── vendor
 ```
+
+## Coming Soon Feature
+```
+- Auto reload apps
+- NSQ
+- Running in Docker (if i'm not lazy enough ^v^)
+- Grace Stop
+```
+
+## To Any Contributor
+Feel free to contribute in here, this repo is meant to be a learning repository to anyone for learning to create webservice with GoLang. So happy learning (^v^)/
