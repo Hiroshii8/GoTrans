@@ -58,3 +58,8 @@ go run app.go
 
 ## To Any Contributor
 Feel free to contribute in here, this repo is meant to be a learning repository to anyone for learning to create webservice with GoLang. So happy learning (^v^)/
+
+## How To Contribute
+1. Fork this repo to yours
+2. Create feature that you desire to
+3. Create pull request and mention me for the update you want to merge. I will review as fast as i can.
