@@ -13,7 +13,7 @@ type Server struct {
 
 // Start server action
 func (s *Server) Start() error {
-	h := Handler.Handler{}
+	h := handler.Handler{}
 	http.HandleFunc("/", h.TranslateHandler)
 	return http.ListenAndServe(s.port, nil)
 }
