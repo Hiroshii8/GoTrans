@@ -13,7 +13,7 @@ type TranslateJSONResp struct {
 	TranslateData TranslateData `json:"data"`
 }
 
-// TranslateData will hold transaltion text include with error message
+// TranslateData will hold translation text include with error message
 type TranslateData struct {
 	Text       string `json:"text"`
 	ErrMessage string `json:"error_message"`
