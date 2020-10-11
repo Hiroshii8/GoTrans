@@ -1,9 +1,11 @@
 # GoTrans
+
 Simple Translator API with golang
 
 you can directly use the the translator by importing translate package to your apps.
 
 ## How to Use Translate package
+
 ```
 import translate "github.com/Hiroshii8/GoTrans/translate"
 
@@ -16,39 +18,40 @@ transResp, err := trans.Request(fromLanguage, toLanguage, text)
 
 ## How to run this apps
 
-make sure the depedency by typing 
-``
-dep ensure -v -vendor-only
-``
+You can run this apps by typing
 
-and then run the apps with 
 ``
 go run app.go
 ``
+
+for testing the GoTrans via http or grpc
 
 ## current folder tree
 
 ```
 ├── app.go
 ├── entity
-│   └── json
-│       └── json.go
-├── Gopkg.lock
-├── Gopkg.toml
+│   └── json
+│       └── json.go
+├── go.mod
+├── go.sum
+├── grpc
+│   ├── Makefile
+│   └── proto
+│       ├── translate.pb.go
+│       └── translate.proto
 ├── handler
-│   └── handler.go
+│   └── handler.go
 ├── README.md
 ├── server
-│   └── server.go
-├── translate
-│   └── translate.go
-├── util
-│   ├── validator.go
-│   └── validator_test.go
-└── vendor
+│   ├── grpc.go
+│   └── server.go
+└── translate
+    └── translate.go
 ```
 
 ## Coming Soon Feature
+
 ```
 - Auto reload apps
 - NSQ
@@ -57,9 +60,11 @@ go run app.go
 ```
 
 ## To Any Contributor
+
 Feel free to contribute in here, this repo is meant to be a learning repository to anyone for learning to create webservice with GoLang. So happy learning (^v^)/
 
 ## How To Contribute
+
 1. Fork this repo to yours
 2. Create feature that you desire to
 3. Create pull request and mention me for the update you want to merge. I will review as fast as i can.
