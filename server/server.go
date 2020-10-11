@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/Hiroshii8/GoTrans/handler"
@@ -15,6 +16,7 @@ type Server struct {
 func (s *Server) Start() error {
 	h := handler.Handler{}
 	http.HandleFunc("/", h.TranslateHandler)
+	fmt.Println("Starting Server at", s.port)
 	return http.ListenAndServe(s.port, nil)
 }
 

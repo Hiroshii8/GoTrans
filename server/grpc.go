@@ -5,10 +5,9 @@ import (
 	"log"
 	"net"
 
-	"google.golang.org/grpc"
-
 	pb "github.com/Hiroshii8/GoTrans/grpc/proto"
 	"github.com/Hiroshii8/GoTrans/translate"
+	"google.golang.org/grpc"
 )
 
 type grpcServer struct {
@@ -25,7 +24,7 @@ func InitGrpc(port string) *grpcServer {
 	}
 }
 
-func (s *grpcServer) Start() {
+func (s *grpcServer) Start() error {
 	address := "0.0.0.0" + s.port
 	lis, err := net.Listen("tcp", address)
 	if err != nil {
@@ -35,6 +34,8 @@ func (s *grpcServer) Start() {
 	newServer := grpc.NewServer()
 	pb.RegisterTranslateServer(newServer, s)
 	newServer.Serve(lis)
+
+	return err
 }
 
 func (s *grpcServer) RequestGrpc(ctx context.Context, req *pb.GoTransReq) (resp *pb.GoTransResp, err error) {

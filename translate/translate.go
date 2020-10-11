@@ -7,8 +7,6 @@ import (
 	"regexp"
 
 	"github.com/pkg/errors"
-
-	"github.com/Hiroshii8/GoTrans/util"
 )
 
 type Translate struct{}

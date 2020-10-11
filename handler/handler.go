@@ -2,10 +2,9 @@ package handler
 
 import (
 	"encoding/json"
-	"net/http"
-
 	jsonEntity "github.com/Hiroshii8/GoTrans/entity/json"
 	"github.com/Hiroshii8/GoTrans/translate"
+	"net/http"
 )
 
 type Handler struct{}

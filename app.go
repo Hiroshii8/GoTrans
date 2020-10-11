@@ -7,10 +7,14 @@ import (
 )
 
 func main() {
-	fmt.Print("start server")
+	fmt.Println("start server")
 
-	grpcSrv := server.InitGrpc(":8081")
-	grpcSrv.Start()
+	// starting grpc via go routine
+	go func() error {
+		grpcSrv := server.InitGrpc(":8081")
+		fmt.Println("starting grpc")
+		return grpcSrv.Start()
+	}()
 
 	srv := server.NewServer(":8080")
 	if err := srv.Start(); err != nil {
