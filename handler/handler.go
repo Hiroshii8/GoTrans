@@ -1,17 +1,16 @@
-package Handler
+package handler
 
 import (
 	"encoding/json"
 	"net/http"
 
 	jsonEntity "github.com/Hiroshii8/GoTrans/entity/json"
-	translate "github.com/Hiroshii8/GoTrans/translate"
+	"github.com/Hiroshii8/GoTrans/translate"
 )
 
 type Handler struct{}
 
 func (h *Handler) TranslateHandler(w http.ResponseWriter, r *http.Request) {
-
 	var (
 		isSuccess  = true
 		errMessage string

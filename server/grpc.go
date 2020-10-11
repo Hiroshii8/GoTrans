@@ -2,11 +2,13 @@ package server
 
 import (
 	"context"
-	pb "github.com/Hiroshii8/GoTrans/grpc/proto"
-	translate "github.com/Hiroshii8/GoTrans/translate"
-	"google.golang.org/grpc"
 	"log"
 	"net"
+
+	"google.golang.org/grpc"
+
+	pb "github.com/Hiroshii8/GoTrans/grpc/proto"
+	"github.com/Hiroshii8/GoTrans/translate"
 )
 
 type grpcServer struct {

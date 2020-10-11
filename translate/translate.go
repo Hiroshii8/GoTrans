@@ -1,12 +1,14 @@
 package translate
 
 import (
-	"github.com/Hiroshii8/GoTrans/util"
-	"github.com/pkg/errors"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"regexp"
+
+	"github.com/pkg/errors"
+
+	"github.com/Hiroshii8/GoTrans/util"
 )
 
 type Translate struct{}
