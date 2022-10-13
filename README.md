@@ -26,6 +26,15 @@ go run app.go
 
 for testing the GoTrans via http or grpc
 
+### Docker
+
+You can also run this via Docker:
+
+```
+docker build . -t gotrans:latest
+docker run --rm  --publish 8080:8080 --publish 8081:8081  gotrans:latest
+```
+
 ## current folder tree
 
 ```
@@ -55,7 +64,6 @@ for testing the GoTrans via http or grpc
 ```
 - Auto reload apps
 - NSQ
-- Running in Docker (if i'm not lazy enough ^v^)
 - Grace Stop
 ```
 
